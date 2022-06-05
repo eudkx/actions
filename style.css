@@ -1,0 +1,156 @@
+/* * {
+  background-color: black;
+} */
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(50, 50, 50);
+}
+
+.first-person-img {
+  background-image: url("./img/pexels-elena-rubtsova-12082485.jpg");
+  width: 60px;
+  height: 60px;
+  background-size: 300%;
+  background-position: 47% 25%;
+  border-radius: 10px;
+}
+h4 {
+  opacity: 0.6;
+  font-size: 14px;
+}
+h3 {
+  font-size: 16px;
+}
+.second-person-img {
+  background-image: url("./img/pexels-anastasia-belousova-11960772.jpg");
+  width: 60px;
+  height: 60px;
+  background-size: 150%;
+  background-position: 50% 50%;
+  border-radius: 10px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* row-gap: 20px; */
+}
+.container {
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
+}
+
+.container-first, .container-second {
+  display: flex;
+  column-gap: 20px;
+}
+.first-content, .second-content {
+  width: 300px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  padding: 10px 20px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 20px 2px rgb(106, 106, 106), 2px 2px 1px 1px rgb(69, 69, 69);
+  height: 80px;
+  /* align-items: center; */
+}
+.first-person-text, .second-person-text {
+  /* height: 100%; */
+  margin-left: 20px;
+}
+.first-block, .second-block {
+  width: 40px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: width 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  box-shadow: 1px 1px 20px 2px rgb(106, 106, 106), 2px 2px 1px 1px rgb(69, 69, 69);
+}
+
+.first-block-wrapper, .second-block-wrapper {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.5s
+}
+.first-block-wrapper div, .second-block-wrapper div {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.first-block-wrapper div, .second-block-wrapper div {
+  /* transition: width 0.5s; */
+  position: absolute;
+  
+}
+.first-block-wrapper div + *, .second-block-wrapper div + *{
+  margin-top: 40px;
+}
+.first-block-wrapper div:nth-child(3), .second-block-wrapper div:nth-child(3) {
+  margin-top: -40px;
+}
+
+.first-block.active, .second-block.active {
+  width: 220px;
+}
+
+.first-block-wrapper.active, .second-block-wrapper.active {
+  /* flex-direction: row; */
+  height: 80px;
+  /* display: inline-block; */
+
+}
+.first-block-wrapper div, .second-block-wrapper div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.first-block-wrapper img, .second-block-wrapper img {
+  width: 5px;  
+  opacity: 0;
+  transition: all 0.5s;
+}
+.first-block-wrapper.active img, .second-block-wrapper.active img {
+  width: 25px;
+  opacity: 1;
+}
+.first-block-wrapper div, .second-block-wrapper div {
+  transition: all 0.5s;
+}
+.first-block-wrapper.active div, .second-block-wrapper.active div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: all 0.5s;
+  
+  background-color: white;
+  border: 2px solid black
+}
+
+.first-block-wrapper.active div:nth-child(3), .second-block-wrapper.active div:nth-child(3) {
+  transform: translateX(-60px) translateY(20px);
+}
+.first-block-wrapper.active div:nth-child(2), .second-block-wrapper.active div:nth-child(2) {
+  transform: translateX(60px) translateY(-20px);
+}
